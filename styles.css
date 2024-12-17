@@ -185,6 +185,25 @@ h1, h2 {
 .inicio .mensaje strong {
     color: #333; /* Destacar lo importante */
 }
+
+/* Estilos generales del botón */
+.btn-go-products {
+    background-color: #4CAF50; /* Verde suave */
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Separación del texto */
+    text-align: center;
+}
+
+/* Efecto al pasar el ratón por encima del botón */
+.btn-go-products:hover {
+    background-color: #45a049; /* Verde más oscuro */
+}
 /* Sección Productos */
 .productos-grid {
     display: grid;
@@ -404,6 +423,21 @@ footer {
         font-size: 12px;
         margin: 2px 0;
     }
+
+    /* Botón responsive */
+@media (max-width: 768px) {
+    .btn-go-products {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-go-products {
+        font-size: 12px;
+        padding: 8px 18px;
+    }
+}
 
     /* Asegurarse de que todo el contenido esté accesible aún en pantallas pequeñas */
     body {
