@@ -116,13 +116,15 @@ h1, h2 {
 /* Sección Inicio */
 .inicio {
     background-color: #f5f5f5;
-    padding: 0;
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    padding: 0 20px 100px; /* Espacio inferior para evitar solapamiento con el footer */
+    min-height: 100vh; /* Siempre ocupará toda la pantalla */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
+
 
 .inicio .inicio-container {
     max-width: 1200px;
@@ -191,7 +193,7 @@ h1, h2 {
     transition: background-color 0.3s ease;
     margin-top: 30px; /* Separación del texto */
     text-align: center;
-    display: inline-block; /* Para que el botón se ajuste a su contenido */
+    display: inline-block; /* Asegura que el botón se ajuste */
 }
 
 /* Efecto al pasar el ratón por encima del botón */
@@ -337,6 +339,11 @@ footer {
 
 /* Responsive para pantallas menores a 768px */
 @media (max-width: 768px) {
+
+    #inicio {
+        padding-bottom: 120px; /* Más espacio para dispositivos pequeños */
+    }
+
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -373,5 +380,10 @@ footer {
 
     .navbar-menu a {
         font-size: 14px;
+    }
+
+    .btn-go-products {
+        font-size: 14px; /* Botón más pequeño */
+        padding: 10px 20px;
     }
 }
