@@ -21,26 +21,60 @@
     </nav>
 </header>
 
-<!-- Productos --> 
+<!-- Productos -->
 <section class="productos">
-    <h1 class="animate-text">Nuestros Productos</h1>
+    <h1>Nuestros Productos</h1>
     <div class="productos-grid">
         <!-- Producto 1 -->
-        <div class="producto-card animate-text">
-            <h3>Envase Transparente</h3>
-            <p>Envase plástico de alta calidad.</p>
-            <p class="precio">$100</p>
-            <button class="btn-agregar">Agregar al Carrito</button>
+        <div class="producto-card">
+            <img src="images/envase-125ml.png" alt="Envase plástico de 125ml">
+            <h3>Envase Plástico 125ml</h3>
+            <p>Ideal para cosméticos, alimentos o productos químicos.</p>
+            <p class="precio">$150</p>
+            <button class="btn-agregar" data-nombre="Envase Plástico 125ml" data-precio="150">Agregar al Carrito</button>
+            <button class="btn-agregar-100" data-nombre="Envase Plástico 125ml" data-precio="150">Agregar 100 al Carrito</button>
         </div>
         <!-- Producto 2 -->
-        <div class="producto-card animate-text">
-            <h3>Envase Color</h3>
-            <p>Envase plástico colorido.</p>
-            <p class="precio">$120</p>
-            <button class="btn-agregar">Agregar al Carrito</button>
+        <div class="producto-card">
+            <img src="images/talquera.png" alt="Talquera">
+            <h3>Talquera</h3>
+            <p>Perfecta para polvos, con diseño práctico y resistente.</p>
+            <p class="precio">$200</p>
+            <button class="btn-agregar" data-nombre="Talquera" data-precio="200">Agregar al Carrito</button>
+            <button class="btn-agregar-100" data-nombre="Talquera" data-precio="200">Agregar 100 al Carrito</button>
+        </div>
+        <!-- Producto 3 -->
+        <div class="producto-card">
+            <img src="images/envase30ml.png" alt="Envase plástico de 30ml">
+            <h3>Envase Plástico 30ml</h3>
+            <p>Compacto y ligero, ideal para muestras o viajes.</p>
+            <p class="precio">$100</p>
+            <button class="btn-agregar" data-nombre="Envase Plástico 30ml" data-precio="100">Agregar al Carrito</button>
+            <button class="btn-agregar-100" data-nombre="Envase Plástico 30ml" data-precio="100">Agregar 100 al Carrito</button>
+        </div>
+        <!-- Producto 4 -->
+        <div class="producto-card">
+            <img src="images/boya.png" alt="Boya satélite">
+            <h3>Boya Satélite</h3>
+            <p>Alta calidad para monitoreo y navegación marítima.</p>
+            <p class="precio">$500</p>
+            <button class="btn-agregar" data-nombre="Boya Satélite" data-precio="500">Agregar al Carrito</button>
+            <button class="btn-agregar-100" data-nombre="Boya Satélite" data-precio="500">Agregar 100 al Carrito</button>
         </div>
     </div>
 </section>
+
+<!-- Sección del Carrito -->
+<section id="carrito" class="carrito-section">
+    <h2>Carrito de Compras</h2>
+    <div id="carrito-items"></div>
+    <p id="carrito-total">Total: $0</p>
+    <div class="carrito-buttons">
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+        <button id="continuar-compra" onclick="window.location.href='checkout.html'">Continuar con la Compra</button>
+    </div>
+</section>
+
 
 
     <footer>
