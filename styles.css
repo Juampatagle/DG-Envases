@@ -1,0 +1,412 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #fafafa; /* Fondo gris suave */
+    color: #333; /* Color del texto */
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 20px; /* Separación entre el título y el contenido */
+    text-align: center; /* Centrado de los títulos */
+}
+
+/* Importación de una fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap');
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Fondo gris oscuro */
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+.navbar:hover {
+    background-color: #444; /* Fondo más claro al pasar el ratón */
+}
+
+.navbar .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff; /* Logo en blanco para destacar sobre el fondo oscuro */
+    transition: color 0.3s;
+    letter-spacing: 2px;
+}
+
+.navbar .logo:hover {
+    color: #f5a623; /* Color cálido para el logo al pasar el ratón */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ddd; /* Color gris claro para los enlaces */
+    font-weight: 500;
+    position: relative; /* Necesario para el efecto de subrayado */
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #f5a623; /* Naranja cálido para los enlaces al pasar el ratón */
+    transform: scale(1.1); /* Efecto de escala */
+}
+
+/* Efecto de subrayado */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f5a623; /* Subrayado naranja cálido */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    transform: scaleX(1); /* Aparece el subrayado */
+}
+
+.carrito {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    color: #ddd; /* Color gris claro para el carrito */
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.carrito:hover {
+    color: #f5a623; /* Naranja cálido en el carrito al pasar el ratón */
+}
+
+#carrito-count {
+    font-weight: bold;
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 10px;
+    font-size: 14px;
+}
+
+#carrito-total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f5a623; /* Naranja cálido para el total del carrito */
+}
+
+
+
+
+
+/* Sección Inicio */
+.inicio {
+    background-color: #f5f5f5;
+    padding: 0;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.inicio .inicio-container {
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.inicio .titulo {
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    transition: color 0.3s;
+}
+
+.inicio .titulo:hover {
+    color: grey; /* Color verde suave al pasar el ratón */
+}
+
+.inicio .subtitulo {
+    font-size: 24px;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.3s;
+}
+
+.inicio .subtitulo:hover {
+    color: #888; /* Cambia el color al pasar el ratón */
+}
+
+.inicio .mensaje {
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.inicio .mensaje p {
+    margin: 10px 0;
+}
+
+.inicio .mensaje strong {
+    color: #333; /* Destacar lo importante */
+}
+/* Sección Productos */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 40px 0; /* Mayor espacio alrededor */
+}
+
+.producto-card {
+    background: #fff;
+    border: 1px solid #ddd; /* Gris claro */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.producto-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.precio {
+    font-size: 1.2em;
+    color: #4CAF50; /* Verde */
+}
+
+/* Sección Sobre Nosotros */
+.sobre-content {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección Contacto */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.contacto-info p {
+    font-size: 1.1em;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #388E3C; /* Verde más oscuro */
+}
+
+/* Sección Carrito */
+.carrito-section {
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco */
+    border-top: 1px solid #ddd; /* Gris claro */
+    margin-top: 40px; /* Separación */
+}
+
+.carrito-items {
+    margin: 10px 0;
+}
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.carrito-total {
+    margin-top: 20px;
+    text-align: right;
+}
+
+#vaciar-carrito {
+    background-color: #d32f2f; /* Rojo suave */
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+/* Responsive para pantallas menores a 1000px */
+@media (max-width: 1000px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-logo {
+        font-size: 20px;
+    }
+
+    .navbar-menu {
+        display: block;
+        text-align: center;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+
+    .navbar-menu a {
+        font-size: 18px;
+    }
+}
+
+/* Responsive para pantallas menores a 768px */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-logo {
+        margin-bottom: 10px;
+    }
+
+    .navbar-menu {
+        width: 100%;
+        display: block;
+    }
+
+    .navbar-menu li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .navbar-menu a {
+        font-size: 16px;
+    }
+}
+
+/* Responsive para pantallas menores a 480px */
+@media (max-width: 480px) {
+    .navbar-logo {
+        font-size: 18px;
+    }
+
+    .navbar-menu li {
+        margin: 5px 0;
+    }
+
+    .navbar-menu a {
+        font-size: 14px;
+    }
+}
+
+/* Responsive para pantallas menores a 420px */
+@media (max-width: 420px) {
+    .navbar {
+        padding: 8px 15px;
+    }
+
+    .navbar-logo {
+        font-size: 16px;
+    }
+
+    .navbar-menu li {
+        margin: 5px 0;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .navbar-menu a {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    /* Asegurar que la navbar se vea correctamente */
+    .navbar-menu {
+        padding-left: 0;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas (≤ 200px) */
+@media (max-width: 200px) {
+    .navbar {
+        padding: 5px 10px;
+    }
+
+    .navbar-logo {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .navbar-menu {
+        display: none; /* Ocultamos el menú */
+    }
+
+    .navbar-logo, .navbar-menu a {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-menu li {
+        font-size: 12px;
+        margin: 2px 0;
+    }
+
+    /* Asegurarse de que todo el contenido esté accesible aún en pantallas pequeñas */
+    body {
+        font-size: 10px; /* Reducimos el tamaño del texto */
+    }
+}

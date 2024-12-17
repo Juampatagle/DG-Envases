@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - DG Envases Plásticos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="logo">DG Envases Plásticos</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="carrito">Carrito (0)</div>
+    </nav>
+
+    <!-- Contacto -->
+    <section class="contacto">
+        <h1>Contacto</h1>
+        <div class="contacto-grid">
+            <div class="contacto-info">
+                <p>Si tienes alguna pregunta, no dudes en contactarnos:</p>
+                <p>Email: contacto@dgenvases.com</p>
+                <p>Teléfono: +1234567890</p>
+            </div>
+            <div class="contacto-form">
+                <form action="enviar-mensaje.html" method="POST">
+                    <input type="text" name="nombre" id="nombre" placeholder="Tu Nombre" required>
+                    <input type="email" name="email" id="email" placeholder="Tu Email" required>
+                    <textarea name="mensaje" id="mensaje" placeholder="Tu Mensaje" required></textarea>
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 DG Envases Plásticos | Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
