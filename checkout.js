@@ -1,3 +1,15 @@
+// Al cargar la página, activamos la animación para la Navbar
+window.addEventListener('load', () => {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.add('animate-navbar');
+});
+
+const carritoItems = document.getElementById("carrito-items");
+const carritoTotal = document.getElementById("carrito-total");
+const btnVaciar = document.getElementById("vaciar-carrito");
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []; // Cargar desde localStorage si existe
+
 document.addEventListener("DOMContentLoaded", () => {
     // Recuperar el carrito desde localStorage
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -22,3 +34,4 @@ document.addEventListener("DOMContentLoaded", () => {
         carritoTotal.textContent = "Total a Pagar: $0";
     }
 });
+
