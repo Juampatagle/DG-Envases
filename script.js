@@ -10,21 +10,22 @@ const observer = new IntersectionObserver((entradas, observer) => {
             observer.unobserve(entrada.target); // Dejar de observar el elemento una vez que ha sido animado
         }
     });
-}, {
-    threshold: 0.5 // Se activará cuando el 50% del elemento sea visible
-});
+}, { threshold: 0.5 });
 
 // Comenzar a observar cada elemento
 elementos.forEach(elemento => {
     observer.observe(elemento);
 });
 
-// Al cargar la página, activamos la animación para la Navbar
+// Al cargar la página, activar la animación para la Navbar
 window.addEventListener('load', () => {
     const navbar = document.querySelector('.navbar');
-    navbar.classList.add('animate-navbar');
+    if (navbar) {
+        navbar.classList.add('animate-navbar');
+    }
 });
 
+// Carrito de compras
 const carritoItems = document.getElementById("carrito-items");
 const carritoTotal = document.getElementById("carrito-total");
 const btnVaciar = document.getElementById("vaciar-carrito");
@@ -50,7 +51,7 @@ function eliminarProducto(nombre) {
 
 // Función para actualizar la visualización del carrito
 function actualizarCarrito() {
-    carritoItems.innerHTML = "";  // Limpiar el contenido actual del carrito
+    carritoItems.innerHTML = ""; // Limpiar el contenido actual del carrito
     let total = 0;
 
     carrito.forEach(producto => {
@@ -81,10 +82,12 @@ function actualizarCarrito() {
 }
 
 // Función para vaciar el carrito
-btnVaciar.addEventListener("click", () => {
-    carrito = [];
-    actualizarCarrito();
-});
+if (btnVaciar) {
+    btnVaciar.addEventListener("click", () => {
+        carrito = [];
+        actualizarCarrito();
+    });
+}
 
 // Event listener para los botones "Agregar al Carrito"
 document.querySelectorAll(".btn-agregar").forEach(button => {
@@ -107,6 +110,7 @@ document.querySelectorAll(".btn-agregar-100").forEach(button => {
 // Inicializar el carrito cuando se carga la página
 actualizarCarrito();
 
-
-
-
+// Función para redirigir a la sección de contacto
+function irAContacto() {
+    window.location.href = "contacto.html";
+}
