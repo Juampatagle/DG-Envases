@@ -658,6 +658,15 @@ footer {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: white;
+    display: flex;
+    flex-direction: column; /* Asegura que todo se apile verticalmente */
+    align-items: center; /* Centra horizontalmente el contenido */
+}
+
+.contactanos .title,
+.contactanos .subtitle,
+.contactanos .info {
+    text-align: center; /* Centra el texto de los títulos e información */
 }
 
 .contactanos .title {
@@ -679,8 +688,11 @@ footer {
     color: #444;
 }
 
-.contact-form {
-    margin-top: 2rem;
+.contact-form label {
+    align-self: flex-start; /* Mantener las etiquetas alineadas a la izquierda */
+    margin-left: 0.5rem;
+    color: #555;
+    font-size: 1rem;
 }
 
 .contact-form label {
@@ -691,12 +703,18 @@ footer {
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
+    width: 100%; /* Los inputs ocupan todo el ancho disponible */
     padding: 0.8rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 150px;
 }
 
 .contact-form input:focus,
@@ -705,7 +723,9 @@ footer {
     outline: none;
 }
 
-.btn-enviar {
+.contact-form .btn-enviar {
+    width: auto; /* Ajustar el ancho al contenido */
+    align-self: center; /* Centrar el botón */
     padding: 0.8rem 2rem;
     background-color: #333;
     color: white;
@@ -716,9 +736,10 @@ footer {
     transition: background-color 0.3s;
 }
 
-.btn-enviar:hover {
+.contact-form .btn-enviar:hover {
     background-color: #555;
 }
+
 
 /* Animaciones */
 .animate-text {
