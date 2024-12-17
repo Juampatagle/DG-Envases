@@ -14,111 +14,104 @@ h1, h2 {
     text-align: center; /* Centrado de los títulos */
 }
 
-/* Importación de una fuente moderna */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap');
+/* Animación de entrada llamativa */
+@keyframes entrada-llamativa {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(10px) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 
-/* Barra de navegación */
+/* Clase que activará la animación */
+.animate-in-llamativa {
+    animation: entrada-llamativa 1.2s ease-out forwards;
+}
+
+
+/* Clase que activará la animación */
+.animate-in {
+    animation: entrada 1s ease-out forwards;
+}
+
+/* Animación de entrada para la Navbar */
+@keyframes entrada-navbar {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px); /* La barra empieza fuera de la pantalla, arriba */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Se mueve hacia su posición original */
+    }
+}
+
+/* Clase que activará la animación en la barra de navegación */
+.animate-navbar {
+    animation: entrada-navbar 0.8s ease-out forwards;
+}
+
+
+
+/* Estilos de la Navbar */
 .navbar {
+    background-color: #333; /* Fondo gris oscuro */
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333; /* Fondo gris oscuro */
-    padding: 15px 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+    flex-wrap: wrap;
 }
 
-.navbar:hover {
-    background-color: #444; /* Fondo más claro al pasar el ratón */
+.navbar-logo {
+    color: #fff; /* Texto blanco */
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-.navbar .logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #fff; /* Logo en blanco para destacar sobre el fondo oscuro */
-    transition: color 0.3s;
-    letter-spacing: 2px;
-}
-
-.navbar .logo:hover {
-    color: #f5a623; /* Color cálido para el logo al pasar el ratón */
-}
-
-.nav-links {
+.navbar-menu {
     list-style: none;
     display: flex;
-    gap: 25px;
+    margin: 0;
+    flex-wrap: wrap;
 }
 
-.nav-links li {
-    font-size: 18px;
-    font-weight: 500;
+.navbar-menu li {
+    margin: 0 15px;
 }
 
-.nav-links li a {
+.navbar-menu a {
+    color: #f0f0f0; /* Color blanco suave */
     text-decoration: none;
-    color: #ddd; /* Color gris claro para los enlaces */
-    font-weight: 500;
-    position: relative; /* Necesario para el efecto de subrayado */
-    transition: color 0.3s, transform 0.3s;
-}
-
-.nav-links li a:hover {
-    color: #f5a623; /* Naranja cálido para los enlaces al pasar el ratón */
-    transform: scale(1.1); /* Efecto de escala */
-}
-
-/* Efecto de subrayado */
-.nav-links li a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #f5a623; /* Subrayado naranja cálido */
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.nav-links li a:hover::after {
-    transform: scaleX(1); /* Aparece el subrayado */
-}
-
-.carrito {
-    display: flex;
-    align-items: center;
-    gap: 12px;
     font-size: 18px;
-    color: #ddd; /* Color gris claro para el carrito */
-    cursor: pointer;
-    font-weight: 600;
     transition: color 0.3s;
 }
 
-.carrito:hover {
-    color: #f5a623; /* Naranja cálido en el carrito al pasar el ratón */
+/* Cambio de color al pasar el ratón por encima de los enlaces */
+.navbar-menu a:hover {
+    color: #80aaff; /* Azul suave */
 }
 
-#carrito-count {
-    font-weight: bold;
-    background-color: #ff6f61;
-    color: white;
-    border-radius: 50%;
-    padding: 4px 10px;
-    font-size: 14px;
+/* Estilo del carrito */
+.cart-icon {
+    font-size: 22px;
+    color: #f0f0f0; /* Blanco suave */
+    transition: color 0.3s;
 }
 
-#carrito-total {
-    font-size: 18px;
-    font-weight: bold;
-    color: #f5a623; /* Naranja cálido para el total del carrito */
+/* Cambio de color al pasar el ratón por encima del carrito */
+.cart-icon:hover {
+    color: #80aaff; /* Azul suave en hover */
 }
-
-
-
-
 
 /* Sección Inicio */
 .inicio {
@@ -153,7 +146,7 @@ h1, h2 {
 }
 
 .inicio .titulo:hover {
-    color: grey; /* Color verde suave al pasar el ratón */
+    color: #888; /* Gris oscuro al pasar el ratón */
 }
 
 .inicio .subtitulo {
@@ -166,7 +159,7 @@ h1, h2 {
 }
 
 .inicio .subtitulo:hover {
-    color: #888; /* Cambia el color al pasar el ratón */
+    color: #777; /* Gris más oscuro */
 }
 
 .inicio .mensaje {
@@ -186,24 +179,39 @@ h1, h2 {
     color: #333; /* Destacar lo importante */
 }
 
-/* Estilos generales del botón */
+/* Botón de "Ver Productos" */
 .btn-go-products {
-    background-color: #4CAF50; /* Verde suave */
+    background-color: #0066cc; /* Azul claro */
     color: white;
-    padding: 12px 24px;
-    font-size: 16px;
+    padding: 14px 28px;
+    font-size: 18px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 20px; /* Separación del texto */
+    margin-top: 30px; /* Separación del texto */
     text-align: center;
+    display: inline-block; /* Para que el botón se ajuste a su contenido */
 }
 
 /* Efecto al pasar el ratón por encima del botón */
 .btn-go-products:hover {
-    background-color: #45a049; /* Verde más oscuro */
+    background-color: #0057b7; /* Azul más oscuro */
 }
+
+/* Animación de entrada con retraso progresivo */
+.animate-text:nth-child(1) {
+    animation-delay: 0s;
+}
+.animate-text:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.animate-text:nth-child(3) {
+    animation-delay: 0.4s;
+}
+/* Y así sucesivamente si tienes más elementos */
+
+
 /* Sección Productos */
 .productos-grid {
     display: grid;
@@ -227,7 +235,7 @@ h1, h2 {
 
 .precio {
     font-size: 1.2em;
-    color: #4CAF50; /* Verde */
+    color: #f5a623; /* Naranja cálido para precio */
 }
 
 /* Sección Sobre Nosotros */
@@ -259,7 +267,7 @@ form input, form textarea, form button {
 }
 
 form button {
-    background-color: #4CAF50;
+    background-color: #0066cc; /* Azul claro */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -267,7 +275,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #388E3C; /* Verde más oscuro */
+    background-color: #0057b7; /* Azul más oscuro */
 }
 
 /* Sección Carrito */
@@ -310,11 +318,7 @@ footer {
 /* Responsive para pantallas menores a 1000px */
 @media (max-width: 1000px) {
     .navbar {
-        padding: 10px;
-    }
-
-    .navbar-logo {
-        font-size: 20px;
+        padding: 10px 15px;
     }
 
     .navbar-menu {
@@ -327,7 +331,7 @@ footer {
     }
 
     .navbar-menu a {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
@@ -369,78 +373,5 @@ footer {
 
     .navbar-menu a {
         font-size: 14px;
-    }
-}
-
-/* Responsive para pantallas menores a 420px */
-@media (max-width: 420px) {
-    .navbar {
-        padding: 8px 15px;
-    }
-
-    .navbar-logo {
-        font-size: 16px;
-    }
-
-    .navbar-menu li {
-        margin: 5px 0;
-        font-size: 14px;
-        width: 100%;
-    }
-
-    .navbar-menu a {
-        font-size: 13px;
-        padding: 10px;
-    }
-
-    /* Asegurar que la navbar se vea correctamente */
-    .navbar-menu {
-        padding-left: 0;
-    }
-}
-
-/* Ajustes para pantallas muy pequeñas (≤ 200px) */
-@media (max-width: 200px) {
-    .navbar {
-        padding: 5px 10px;
-    }
-
-    .navbar-logo {
-        font-size: 12px;
-        margin: 0;
-    }
-
-    .navbar-menu {
-        display: none; /* Ocultamos el menú */
-    }
-
-    .navbar-logo, .navbar-menu a {
-        text-align: center;
-        width: 100%;
-    }
-
-    .navbar-menu li {
-        font-size: 12px;
-        margin: 2px 0;
-    }
-
-    /* Botón responsive */
-@media (max-width: 768px) {
-    .btn-go-products {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .btn-go-products {
-        font-size: 12px;
-        padding: 8px 18px;
-    }
-}
-
-    /* Asegurarse de que todo el contenido esté accesible aún en pantallas pequeñas */
-    body {
-        font-size: 10px; /* Reducimos el tamaño del texto */
     }
 }

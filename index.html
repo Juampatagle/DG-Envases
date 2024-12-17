@@ -7,38 +7,40 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Barra de navegación -->
-    <nav class="navbar">
-        <div class="logo">
-            DG Envases Plásticos
-        </div>
-        <ul class="nav-links">
+<!-- Navbar -->
+<!-- Navbar -->
+<header>
+    <nav class="navbar animate-navbar">
+        <a href="#" class="navbar-logo">DG Envases Plásticos</a>
+        <ul class="navbar-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="productos.html">Productos</a></li>
             <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
             <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
-        <div class="carrito">
-            <span class="carrito-icon">🛒</span>
-            <span id="carrito-count">0</span>
-            <span id="carrito-total">$0</span>
-        </div>
     </nav>
+</header>
+
     
 
-    <!-- Contenido de la página -->
-    <section id="inicio" class="inicio">
-        <div class="inicio-container">
-            <h1 class="titulo">DG Envases Plásticos</h1>
-            <p class="subtitulo">Calidad y confianza en cada envase</p>
-            <div class="mensaje">
-                <p><strong>Productos de alta calidad:</strong> Trabajamos con materiales duraderos y resistentes, ideales para mantener la integridad de tus productos.</p>
-                <p><strong>Envíos 100% seguros:</strong> Garantizamos que tu pedido llegará a su destino de forma rápida y segura, sin preocupaciones.</p>
-                <p><strong>Compromiso con el medio ambiente:</strong> Nuestros envases son fabricados con procesos que respetan el entorno, asegurando un impacto mínimo.</p>
-                <button onclick="location.href='#productos'" class="btn-go-products">Ver Productos</button>
-            </div>
+<!-- Contenido de la página -->
+<section id="inicio" class="inicio">
+    <div class="inicio-container">
+        <h1 class="titulo animate-text">DG Envases Plásticos</h1>
+        <p class="subtitulo animate-text">Calidad y confianza en cada envase</p>
+        <div class="mensaje animate-text">
+            <p><strong>Productos de alta calidad:</strong> Trabajamos con materiales duraderos y resistentes, ideales para mantener la integridad de tus productos.</p>
+            <p><strong>Envíos 100% seguros:</strong> Garantizamos que tu pedido llegará a su destino de forma rápida y segura, sin preocupaciones.</p>
+            <p><strong>Compromiso con el medio ambiente:</strong> Nuestros envases son fabricados con procesos que respetan el entorno, asegurando un impacto mínimo.</p>
+            <a href="productos.html">
+                <button class="btn-go-products">Ver Productos</button>
+            </a>
         </div>
-    </section>
+    </div>
+</section>
+
+
     
 
     <footer>
