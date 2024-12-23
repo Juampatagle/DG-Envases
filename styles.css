@@ -49,6 +49,7 @@ nav a.active {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra sutil para mayor profundidad */
+    border-bottom: 2px solid black;
 }
 
 /* Estilo de la marca */
@@ -111,7 +112,15 @@ nav a.active {
     color: #333;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    margin-top: px; /* Aumentar el margen superior */
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    background-image: url(https://images.unsplash.com/photo-1634284948033-91cd3eee3904?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); /* Ruta de tu imagen */
+    background-size: cover; /* La imagen cubre toda la sección */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: 100%; /* Asegura que la sección ocupe el 100% del ancho de la pantalla */
+    height: 100vh; /* La sección ocupa el 100% de la altura de la ventana */
+    box-sizing: border-box;
 }
 
 .intro-container {
@@ -133,7 +142,7 @@ nav a.active {
     font-size: 3em;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: black;
     opacity: 0;
     animation: fadeInUp 1s 0.5s forwards;
 }
@@ -141,7 +150,7 @@ nav a.active {
 .intro-description {
     font-size: 1.2em;
     line-height: 1.6;
-    color: #7f8c8d;
+    color: black;
     margin-bottom: 30px;
     opacity: 0;
     animation: fadeInUp 1s 1s forwards;
@@ -659,6 +668,8 @@ footer p {
     #inicio {
         flex-direction: column;
         text-align: center;
+        padding: 150px 20px; /* Reduce el padding en pantallas pequeñas */
+        height: 80vh; /* Reduce la altura en pantallas pequeñas */
     }
 
     .intro-container {
@@ -734,5 +745,13 @@ footer p {
 
     .producto-img {
         width: 100%;  /* Imagen se adapta a pantallas pequeñas */
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #inicio {
+        padding: 100px 20px; /* Ajusta el padding para móviles */
+        height: 70vh; /* Ajusta la altura aún más en móviles */
     }
 }
