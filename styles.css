@@ -151,7 +151,7 @@ nav a.active {
     display: inline-block;
     padding: 10px 20px;
     background-color: #ffd700;
-    color: white;
+    color: black;
     font-size: 1.1em;
     text-decoration: none;
     border-radius: 5px;
@@ -160,7 +160,7 @@ nav a.active {
 
 .cta .btn:hover {
     background-color: #b99e00;
-    
+    color: white;
 }
 
 
@@ -227,6 +227,7 @@ nav a.active {
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
+    margin-top: 1rem;
 }
 
 .product:hover {
@@ -242,6 +243,27 @@ nav a.active {
     padding: 1rem;
     color: #666;
     font-size: 1rem;
+}
+
+/* Estilos generales para el botón */
+.btn {
+    display: inline-block;
+    background-color: #ffd700; /* Color de fondo */
+    color: black;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b99e00; /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de agrandamiento al hacer hover */
+    color: white;
 }
 
 /* Sección de Sobre Nosotros */
@@ -449,13 +471,13 @@ nav a.active {
 }
 
 footer {
-    background-color: #333;  /* Color de fondo */
-    color: #fff;  /* Color del texto */
-    text-align: center;  /* Centrar el texto */
-    padding: 20px;  /* Espaciado alrededor del texto */
-    position: relative;  /* Para no interferir con otras secciones */
-    bottom: 0;  /* Para que quede al final de la página */
-    width: 100%;  /* Ancho completo */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 footer p {
@@ -497,6 +519,119 @@ footer p {
         transform: translateY(0);
     }
 }
+
+
+
+/* Estilo de la página de detalles del producto */
+#producto1-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 6rem 2rem; /* Añadimos más espacio para un diseño más grande */
+    text-align: center;
+    background-color: #fff;
+    min-height: 80vh; /* Aseguramos que ocupe un buen tamaño */
+    margin-bottom: 2rem;
+}
+
+.producto-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+}
+
+.producto-img {
+    max-width: 100%;
+    height: auto;
+    width: 500px;  /* Imagen más grande */
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Animación al hacer hover */
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.producto-img:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+}
+
+.producto-description {
+    max-width: 700px;  /* Hacemos la descripción más ancha */
+    text-align: left;
+    animation: slideIn 1s ease-out; /* Animación de entrada */
+}
+
+.producto-description h2 {
+    font-size: 3.5rem;  /* Título más grande */
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.producto-description p {
+    font-size: 1.4rem;  /* Descripción más grande */
+    margin-bottom: 1.5rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+.producto-description ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.producto-description li {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #555;
+}
+
+/* Botón de volver */
+.btn-back {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ffd700;
+    color: white;
+    font-size: 1.4em;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 3rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #b99e00;
+}
+
+/* Animación de deslizamiento para los elementos de texto */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animación de desvanecimiento para los elementos */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -560,6 +695,11 @@ footer p {
         max-width: 100%;
     }
 
+    .btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
     /* Ajustes para los valores en "Sobre Nosotros" */
     .values {
         flex-direction: column;
@@ -585,5 +725,14 @@ footer p {
     .contact-form {
         width: 100%;
         padding: 1rem;
+    }
+
+    .producto-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .producto-img {
+        width: 100%;  /* Imagen se adapta a pantallas pequeñas */
     }
 }
