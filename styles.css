@@ -740,9 +740,3 @@ footer p {
     }
 }
 
-@media screen and (max-width: 480px) {
-    #inicio {
-        padding: 100px 20px; /* Ajusta el padding para móviles */
-        height: 70vh; /* Ajusta la altura aún más en móviles */
-    }
-}
