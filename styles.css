@@ -533,6 +533,7 @@ footer p {
     background-color: #fff;
     min-height: 80vh; /* Aseguramos que ocupe un buen tamaño */
     margin-bottom: 2rem;
+    border-bottom: 2px solid black;
 }
 
 .producto-info {
