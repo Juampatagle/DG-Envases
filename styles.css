@@ -596,7 +596,7 @@ footer p {
 .btn-back {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #ffd700;
+    background-color: black;
     color: white;
     font-size: 1.4em;
     text-decoration: none;
@@ -606,7 +606,7 @@ footer p {
 }
 
 .btn-back:hover {
-    background-color: #b99e00;
+    background-color: grey;
 }
 
 /* Animación de deslizamiento para los elementos de texto */
@@ -697,10 +697,7 @@ footer p {
         max-width: 100%;
     }
 
-    .btn {
-        padding: 0.8rem 1.2rem;
-        font-size: 0.9rem;
-    }
+
 
     /* Ajustes para los valores en "Sobre Nosotros" */
     .values {
